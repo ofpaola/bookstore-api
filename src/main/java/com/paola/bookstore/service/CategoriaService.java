@@ -32,6 +32,7 @@ public class CategoriaService {
 		return repository.save(obj);
 	}
 
+	/*se o usuario nao colocar nada, deixar como estava antes*/
 	public Categoria update(Integer id, CategoriaDTO objDto) {
 		Categoria obj = findById(id);
 		obj.setNome(objDto.getNome());
