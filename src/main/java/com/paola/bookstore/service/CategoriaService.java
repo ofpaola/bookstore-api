@@ -32,11 +32,11 @@ public class CategoriaService {
 		return repository.save(obj);
 	}
 
-	/*se o usuario nao colocar nada, deixar como estava antes*/
 	public Categoria update(Integer id, CategoriaDTO objDto) {
 		Categoria obj = findById(id);
-		obj.setNome(objDto.getNome());
-		obj.setDescricao(objDto.getDescricao());
+		/*se o usuario nao colocar nada, deixa como estava antes*/
+		obj.setNome(objDto.getNome() == null ? obj.getNome() : objDto.getNome());
+		obj.setDescricao(objDto.getDescricao() == null ? obj.getDescricao() : objDto.getDescricao());
 		return repository.save(obj);
 	}
 
